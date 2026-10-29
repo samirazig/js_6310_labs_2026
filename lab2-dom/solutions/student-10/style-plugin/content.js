@@ -51,24 +51,20 @@ function addRavenclawStyle() {
         console.log('Кнопка переключения на стиль Когтевран добавлена');
 
         const week = document.getElementById('weekParity');
-        if (!week) {
-            console.log('Не найден блок недели');
-            return;
+        if (week) {
+            week.parentElement.classList.add('ravenclaw-week');
         }
-        week.parentElement.classList.add('ravenclaw-week');
 
         const menu_list = document.querySelectorAll('.menu-list > li');
-        if (!menu_list) {
-            console.log('Не найден вехний блок меню');
-            return;
-        }
 
         menu_list.forEach((item) => {
             item.classList.add('ravenclaw-menu-item');
         });
 
         const menu_first = document.querySelector('.menu-list');
-        menu_first.children[0].classList.add('ravenclaw-first');
+        if (menu_first) {
+            menu_first.children[0].classList.add('ravenclaw-first');
+        }
     
   
     }
